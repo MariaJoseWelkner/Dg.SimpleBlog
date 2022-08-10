@@ -1,0 +1,25 @@
+<div class="container">
+<h1>Create a Post</h1>
+
+<%= form_with url:"/posts/create", method: :get  do|form|  %>
+    <div class="mb-3">
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title , class: 'form-control' ,placeholder:"Write a title", required: true %>
+
+    </div>
+    <div class="mb-3">
+    <%= form.label :image_url, class: 'form-label' %>
+    <%= form.text_field :image_url , class: 'form-control' ,placeholder:"Write a url image"%>
+    </div>
+
+    <div class="mb-3">
+    <%= form.label :content, class: 'form-label' %>
+    <%= form.text_area :content , class: 'form-control' ,placeholder:"Write a content to post", rows: 3, required: true%>
+    </div>
+    <button  type="submit" class="btn btn-success">Submit</button>
+<%= link_to('Back', root_path) %>
+
+</div>
+
+<% end %>
+
